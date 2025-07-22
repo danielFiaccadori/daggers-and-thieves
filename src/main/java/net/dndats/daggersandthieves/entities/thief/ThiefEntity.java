@@ -1,7 +1,7 @@
 package net.dndats.daggersandthieves.entities.thief;
 
-import net.dndats.daggersandthieves.entities.thief.ai.AmbushGoal;
 import net.dndats.daggersandthieves.entities.thief.ai.StalkTargetGoal;
+import net.dndats.daggersandthieves.registry.ModItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -21,7 +21,6 @@ import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
@@ -86,7 +85,8 @@ public class ThiefEntity extends AbstractIllager implements GeoEntity {
     @Override
     protected void populateDefaultEquipmentSlots(@NotNull RandomSource random, @NotNull DifficultyInstance difficulty) {
         super.populateDefaultEquipmentSlots(random, difficulty);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.IRON_DAGGER));
+        this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.IRON_DAGGER));
     }
 
     @Override

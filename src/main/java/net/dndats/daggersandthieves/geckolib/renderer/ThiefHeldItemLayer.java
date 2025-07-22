@@ -27,37 +27,39 @@ public class ThiefHeldItemLayer extends GeoRenderLayer<ThiefEntity> {
     public void renderForBone(PoseStack poseStack, ThiefEntity animatable, GeoBone bone, RenderType renderType,
                               MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
 
-        String targetBoneName = "right_arm";
+        String boneName = bone.getName();
 
-        if (!bone.getName().equals(targetBoneName)) {
-            return;
+        if (boneName.equals("right_arm") || boneName.equals("left_arm")) {
+
+            EquipmentSlot handSlot = boneName.equals("right_arm") ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
+            ItemStack heldItem = animatable.getItemBySlot(handSlot);
+
+            if (!heldItem.isEmpty()) {
+                poseStack.pushPose();
+
+                if (boneName.equals("right_arm")) {
+                    poseStack.translate(0.35F, 0.75F, -0.20F);
+                    poseStack.mulPose(new Quaternionf().setAngleAxis((float) Math.toRadians(-90f), 1f, 0f, 0f));
+                } else {
+                    poseStack.translate(-0.35F, 0.75F, -0.20F);
+                    poseStack.mulPose(new Quaternionf().setAngleAxis((float) Math.toRadians(-90f), 1f, 0f, 0f));
+                }
+
+                context.getItemRenderer().renderStatic(
+                        animatable,
+                        heldItem,
+                        ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,
+                        false,
+                        poseStack,
+                        bufferSource,
+                        animatable.level(),
+                        packedLight,
+                        packedOverlay,
+                        animatable.getId()
+                );
+
+                poseStack.popPose();
+            }
         }
-
-        ItemStack heldItem = animatable.getItemBySlot(EquipmentSlot.MAINHAND);
-
-        if (heldItem.isEmpty()) {
-            return;
-        }
-
-        poseStack.pushPose();
-
-        poseStack.translate(0.35F, 0.75, -0.20F);
-
-        poseStack.mulPose(new Quaternionf().setAngleAxis((float) Math.toRadians(-90f), 1f, 0f, 0f));
-
-        context.getItemRenderer().renderStatic(
-                animatable,
-                heldItem,
-                ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,
-                false,
-                poseStack,
-                bufferSource,
-                animatable.level(),
-                packedLight,
-                packedOverlay,
-                animatable.getId()
-        );
-
-        poseStack.popPose();
     }
 }

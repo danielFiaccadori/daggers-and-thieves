@@ -1,7 +1,5 @@
 package net.dndats.daggersandthieves.entities.thief.ai;
 
-import net.dndats.api.helper.DamageHelper;
-import net.dndats.daggersandthieves.DaggersAndThieves;
 import net.dndats.daggersandthieves.entities.thief.ThiefEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
@@ -47,6 +45,10 @@ public class StalkTargetGoal extends Goal {
     public boolean canUse() {
         //TODO: definir lógica para não executar com jogadores no criativo e alvejar também villagers
         this.target = this.mob.level().getNearestPlayer(this.mob, this.maxStalkDistance);
+
+        if (this.target instanceof Player player && player.isCreative()) {
+            return false;
+        }
 
         if (this.target == null) {
             return false;

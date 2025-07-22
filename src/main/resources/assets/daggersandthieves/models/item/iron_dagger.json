@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "daggersandthieves:item/iron_dagger"
+  }
+}

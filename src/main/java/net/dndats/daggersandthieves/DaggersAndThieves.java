@@ -3,6 +3,7 @@ package net.dndats.daggersandthieves;
 import com.mojang.logging.LogUtils;
 import net.dndats.daggersandthieves.entities.thief.ThiefRenderer;
 import net.dndats.daggersandthieves.registry.ModEntities;
+import net.dndats.daggersandthieves.registry.ModItems;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -29,6 +30,9 @@ public class DaggersAndThieves {
         // Registers mod mobs
         ModEntities.register(modEventBus);
 
+        // Registers mod items
+        ModItems.register(modEventBus);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -40,7 +44,7 @@ public class DaggersAndThieves {
         LOGGER.info("HELLO from server starting");
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

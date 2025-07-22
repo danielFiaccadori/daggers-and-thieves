@@ -1,5 +1,9 @@
 {
-  "itemGroup.daggersandthieves": "Example Mod Tab",
-  "block.daggersandthieves.example_block": "Example Block",
-  "item.daggersandthieves.example_item": "Example Item"
+  "item.daggersandthieves.wooden_dagger": "Wooden Dagger",
+  "item.daggersandthieves.stone_dagger": "Stone Dagger",
+  "item.daggersandthieves.golden_dagger": "Golden Dagger",
+  "item.daggersandthieves.iron_dagger": "Iron Dagger",
+  "item.daggersandthieves.diamond_dagger": "Diamond Dagger",
+  "item.daggersandthieves.netherite_dagger": "Netherite Dagger"
+
 }
