@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "daggersandthieves:wooden_dagger",
+    "daggersandthieves:stone_dagger",
+    "daggersandthieves:golden_dagger",
+    "daggersandthieves:iron_dagger",
+    "daggersandthieves:diamond_dagger",
+    "daggersandthieves:netherite_dagger"
+  ]
+}

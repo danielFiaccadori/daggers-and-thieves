@@ -16,17 +16,17 @@ public class ModItems {
 
     // Daggers
     public static final DeferredHolder<Item, Item> WOODEN_DAGGER =
-            ITEMS.register("wooden_dagger", () -> new DaggerItem(Tiers.WOOD, 1F, -2F, new Item.Properties()));
+            ITEMS.register("wooden_dagger", () -> new DaggerItem(Tiers.WOOD, 0F, -1.5F, new Item.Properties()));
     public static final DeferredHolder<Item, Item> STONE_DAGGER =
-            ITEMS.register("stone_dagger", () -> new DaggerItem(Tiers.STONE, 1.5F, -2F, new Item.Properties()));
+            ITEMS.register("stone_dagger", () -> new DaggerItem(Tiers.STONE, -0.5F, -1.5F, new Item.Properties()));
     public static final DeferredHolder<Item, Item> GOLDEN_DAGGER =
-            ITEMS.register("golden_dagger", () -> new DaggerItem(Tiers.GOLD, 1F, -2F, new Item.Properties()));
+            ITEMS.register("golden_dagger", () -> new DaggerItem(Tiers.GOLD, 0F, -1.5F, new Item.Properties()));
     public static final DeferredHolder<Item, Item> IRON_DAGGER =
-            ITEMS.register("iron_dagger", () -> new DaggerItem(Tiers.IRON, 2F, -2F, new Item.Properties()));
+            ITEMS.register("iron_dagger", () -> new DaggerItem(Tiers.IRON, -1F, -1.5F, new Item.Properties()));
     public static final DeferredHolder<Item, Item> DIAMOND_DAGGER =
-            ITEMS.register("diamond_dagger", () -> new DaggerItem(Tiers.DIAMOND, 2.5F, -2F, new Item.Properties()));
+            ITEMS.register("diamond_dagger", () -> new DaggerItem(Tiers.DIAMOND, -2F, -1.5F, new Item.Properties()));
     public static final DeferredHolder<Item, Item> NETHERITE_DAGGER =
-            ITEMS.register("netherite_dagger", () -> new DaggerItem(Tiers.NETHERITE, 3F, -2F, new Item.Properties()));
+            ITEMS.register("netherite_dagger", () -> new DaggerItem(Tiers.NETHERITE, -2F, -1.5F, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

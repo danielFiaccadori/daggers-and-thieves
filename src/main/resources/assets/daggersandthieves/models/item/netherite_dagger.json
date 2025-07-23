@@ -2,5 +2,27 @@
   "parent": "minecraft:item/handheld",
   "textures": {
     "layer0": "daggersandthieves:item/netherite_dagger"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-45, -90, 0],
+      "translation": [0, 3, 2],
+      "scale": [0.75, 0.75, 0.75]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [-45, 90, 0],
+      "translation": [0, 3, 2],
+      "scale": [0.75, 0.75, 0.75]
+    },
+    "firstperson_righthand": {
+      "rotation": [-45, -90, 0],
+      "translation": [0, 3, 2],
+      "scale": [0.75, 0.75, 0.75]
+    },
+    "firstperson_lefthand": {
+      "rotation": [-45, 90, 0],
+      "translation": [0, 3, 2],
+      "scale": [0.75, 0.75, 0.75]
+    }
   }
 }

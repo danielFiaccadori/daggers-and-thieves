@@ -53,7 +53,6 @@ public class DaggersAndThieves {
         @SubscribeEvent
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(ModEntities.THIEF.get(), ThiefRenderer::new);
-
         }
 
     }
