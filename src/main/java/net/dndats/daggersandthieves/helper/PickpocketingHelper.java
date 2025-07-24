@@ -1,7 +1,11 @@
 package net.dndats.daggersandthieves.helper;
 
+import net.dndats.daggersandthieves.DaggersAndThieves;
+import net.dndats.hackersandslashers.utils.helper.EntityHelper;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.ClipContext;
@@ -15,7 +19,19 @@ import java.util.Optional;
 
 public class PickpocketingHelper {
 
-    private static final int PICKPOCKETING_RANGE = 3;
+    private static final int PICKPOCKETING_RANGE = 2;
+
+    public static boolean canPickpocket(LivingEntity victim, Player thief) {
+        if (victim instanceof Mob mob) {
+            boolean crouching = thief.isCrouching();
+            boolean emptyHands = thief.getMainHandItem().isEmpty() && thief.getOffhandItem().isEmpty();
+
+            if (!emptyHands) thief.displayClientMessage(Component.translatable("Your hands must be empty to pickpocket"), true);
+
+            return crouching && emptyHands;
+        }
+        return false;
+    }
 
     public static Optional<LivingEntity> getCurrentPickpocketing(Player thief) {
         Optional<Entity> targetEntity = performExtendedRaycast(thief);

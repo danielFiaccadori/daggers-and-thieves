@@ -104,7 +104,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
-    implementation "com.dndats:hackersandslashers:1.1.4-beta-7-20250721.220641-1"
+    implementation "com.dndats:hackersandslashers:1.1.4-beta-7-20250724.003803-7"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

@@ -1,6 +1,7 @@
 package net.dndats.daggersandthieves;
 
 import com.mojang.logging.LogUtils;
+import net.dndats.daggersandthieves.common.network.NetworkHandler;
 import net.dndats.daggersandthieves.entities.thief.ThiefRenderer;
 import net.dndats.daggersandthieves.registry.ModEntities;
 import net.dndats.daggersandthieves.registry.ModItems;
@@ -33,6 +34,8 @@ public class DaggersAndThieves {
         // Registers mod items
         ModItems.register(modEventBus);
 
+        // Register networking
+        NetworkHandler.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
